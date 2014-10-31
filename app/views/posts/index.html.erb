@@ -3,4 +3,10 @@
 
 <% @posts.each do |post| %>
   <%= render 'post', post: post %>
+  <% if logged_in? %>
+  [<%= link_to 'edit', edit_post_path(post) %>]
+  <% end %>
+  created at <%= display_datetime(post.created_at) %>
+
+
 <% end %> 
