@@ -1,3 +1,5 @@
+<%= render 'shared/content_title', title: 'Log In' %>
+
 <h4>Please log in</h4>
 
 <div class='well'>
@@ -8,7 +10,7 @@
     </div> 
     <div class='control-group'>
       <%= f.label_tag :password %>
-      <%= f.text_field_tag :password, params[:password] || '' %>
+      <%= f.password_field_tag :password, params[:password] || '' %>
     </div> 
     <%= submit_tag "Login", class: 'btn btn-success' %>
   <% end %>

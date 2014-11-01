@@ -3,10 +3,12 @@ class ApplicationController < ActionController::Base
   #for APIs, you may want to use :null_session instead
   protect_from_forgery with: :exception
   
-  helper_method: :current_user, :logged_in?
+  helper_method :current_user, :logged_in?
+  #makes control methods available to view templates
   
   def current_user
     #memoization - save value into instance variable - only hit the database once
+    #if instance variable exists, don't run the code on the right 
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   
