@@ -11,7 +11,7 @@ class SessionsController<ApplicationController
       session[:user_id] = user.id
       #save only user id, not user object, because of cookie size limit 
       flash[:notice] = "You are now logged in."
-      redirect_to_root_path
+      redirect_to root_path
     else
       flash[:error] = "There's something wrong with your username or password."
       redirect_to register_path
@@ -21,6 +21,6 @@ class SessionsController<ApplicationController
   def destroy
     session[:user_id] = nil
     flash[:notice] = "You are now logged out."
-    redirect_to_root_path
+    redirect_to root_path
   end
 end
