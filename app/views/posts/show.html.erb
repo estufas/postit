@@ -4,7 +4,7 @@
 <%= render @post.categories %>
 <br/>
 
-<% if logged_in? %>
+<% if current_user.id == @post.user_id %>
   [<%= link_to 'edit this post', edit_post_path(@post)%>]
 <% end %>  
 

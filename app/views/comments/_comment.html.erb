@@ -3,13 +3,16 @@
 <div class='span0 well text-center'>
   <%= link_to vote_post_comment_path(comment.post, comment, vote: true), method: 'post' do %>
     <i class='icon-arrow-up'></i>
-  <br/>
   <%end %>
+  <%= comment.up_votes %>
+  <br/>
   <%= comment.total_votes %> votes
   <br/>
   <%= link_to vote_post_comment_path(comment.post, comment, vote: false), method: 'post' do %>
     <i class='icon-arrow-down'></i>
   <%end %>
+  <%= comment.down_votes %>
+  </br>
 </div>
 
 <div class="well span8">
@@ -21,4 +24,5 @@
     <br/>
     
   by <%= link_to comment.creator.username, user_path(comment.creator) %> at <%= display_datetime(comment.created_at) %>
+  </br>
   </div>

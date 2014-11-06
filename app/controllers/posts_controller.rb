@@ -46,6 +46,7 @@ class PostsController < ApplicationController
   
   def vote
     vote = Vote.create(voteable: @post, creator: current_user, vote: params[:vote])
+    #strong params not needed because keys are hard coded, can parse values out
       if vote.valid?
         flash[:notice] = "Your vote was counted."
       else
@@ -64,7 +65,7 @@ class PostsController < ApplicationController
   end
     
   def post_params
-    params.require(:post).permit(:title, :url, :description)
+    params.require(:post).permit(:title, :url, :description, category_ids: [])
   end
   
   def set_post

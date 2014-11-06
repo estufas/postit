@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
   validates :url, presence: true, uniqueness: true
   
   def total_votes
-    self.up_votes - self.down_votes
+    self.up_votes + self.down_votes
   end
   
   def up_votes
@@ -18,6 +18,6 @@ class Post < ActiveRecord::Base
   end
   
   def down_votes
-    self.votes.where(vote: false).size
+    self.votes.where(vote: false).size  
   end
 end

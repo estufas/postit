@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :require_same_user, only: [:edit, :update]
 
   #only posts by logged in user can be edited
+
   
   def new
     @user = User.new
@@ -55,5 +56,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
   end
+  
+ 
   
 end
