@@ -45,13 +45,13 @@ class PostsController < ApplicationController
 
   
   def vote
-    Vote.create(voteable: @post, creator: current_user, vote: params[:vote])
+    vote = Vote.create(voteable: @post, creator: current_user, vote: params[:vote])
       if vote.valid?
         flash[:notice] = "Your vote was counted."
       else
         flash[:error] = "You can only vote once."
       end
-    #redirect_to :back
+    redirect_to :back
   end
 
   private
@@ -62,7 +62,7 @@ class PostsController < ApplicationController
       redirect_to root_path
     end
   end
-
+    
   def post_params
     params.require(:post).permit(:title, :url, :description)
   end
