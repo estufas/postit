@@ -10,22 +10,13 @@ class CategoriesController < ApplicationController
     
     if @category.save
       flash[:notice] = "Category has been created."
-      redirect_to posts_path     
+      redirect_to root_path     
     else
-      flash[:error] = "Error."
       render :new
     end
   end
   
   def show
-    @category = Category.find(params[:id])
-  end
-
-  def edit
-    @category = Category.find(params[:id])
-  end
-  
-  def update
     @category = Category.find(params[:id])
   end
   
