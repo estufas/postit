@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
     #memoization - save value into instance variable - only hit the database once
     #if instance variable exists, don't run the code on the right 
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    rescue ActiveRecord::RecordNotFound
     #User.find(session[:user_id]) if session[:user_id]
   end
   
