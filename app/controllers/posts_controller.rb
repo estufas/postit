@@ -41,15 +41,22 @@ class PostsController < ApplicationController
 
   
   def vote
-    vote = Vote.create(voteable: @post, creator: current_user, vote: params[:vote])
-    #strong params not needed because keys are hard coded, can parse values out
-      if vote.valid?
-        flash[:notice] = "Your vote was counted."
-      else
-        flash[:error] = "You can only vote once."
+    @vote = Vote.create(voteable: @post, creator: current_user, vote: params[:vote])
+
+    respond_to do |format|
+      format.html do
+        if @vote.valid?
+          flash[:notice] = 'Your vote was counted.'
+        else
+          flash[:error] = 'You can only vote on a post once.'
+        end
+        redirect_to :back
       end
-    redirect_to :back
+      format.js
+    end
   end
+
+      
 
   private
   
