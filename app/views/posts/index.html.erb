@@ -1,8 +1,8 @@
 
 <%= render 'shared/content_title', title: 'All Posts' %>
-
+ 
 <% @posts.each do |post| %>
   <%= render 'post', post: post %>
   created at <%= display_datetime(post.created_at) %>
- 
 <% end %> 
+

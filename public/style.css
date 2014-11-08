@@ -1,6 +1,19 @@
-html, body {
+.main-body {
   font-family: 'Raleway', sans-serif;
-  font-family: 'Inconsolata';
+  font-size: 1.2em;
+}
+
+#main-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.7em;
+}
+
+.index-post {
+  margin: 2% 2%;
+}
+
+#show-comment {
+  padding: 5%;
 }
 
 .nav {
