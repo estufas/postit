@@ -1,17 +1,17 @@
 <% show_post ||= false %> 
 
 <div class='span0 well text-center'>
-  <%= link_to vote_post_comment_path(comment.post, comment, vote: true), method: 'post' do %>
+  <%= link_to vote_post_comment_path(comment.post, comment, vote: true), method: 'post', remote: true do %>
     <i class='icon-arrow-up'></i>
   <%end %>
-  <%= comment.up_votes %>
+  <span id='comment_<%= comment.id %>up_votes'><%= comment.up_votes %></span>
   <br/>
-  <%= comment.total_votes %> votes
+  <span id='comment_<%= comment.id %>_votes'><%= comment.total_votes %> votes</span>
   <br/>
-  <%= link_to vote_post_comment_path(comment.post, comment, vote: false), method: 'post' do %>
+  <%= link_to vote_post_comment_path(comment.post, comment, vote: false), method: 'post', remote: true do %>
     <i class='icon-arrow-down'></i>
   <%end %>
-  <%= comment.down_votes %>
+  <span id='comment_<%= comment.id %>down_votes'><%= comment.down_votes %></span>
   </br>
 </div>
 
