@@ -1,7 +1,7 @@
 <% if @vote.valid? %>
-$("#post_<%= @post.id %>_votes").html("<%= @post.total_votes %> votes")
-$("#post_<%= @post.id %>up_votes").html("<%= @post.up_votes %>")
-$("#post_<%= @post.id %>down_votes").html("<%= @post.down_votes %>")
+  $("#post_<%= @post.slug %>_votes").html("<%= @post.total_votes %> votes")
+  $("#post_<%= @post.slug %>up_votes").html("<%= @post.up_votes %>")
+  $("#post_<%= @post.slug %>down_votes").html("<%= @post.down_votes %>")
 <% else %>
   alert('You can only vote on a post once.');
 <% end %>

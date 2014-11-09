@@ -2,10 +2,9 @@ class CommentsController < ApplicationController
   before_action :require_user
   
   def create
-    @post = Post.find(params[:post_id])
+    @post = Post.find_by slug: params[:post_id]
     @comment = @post.comments.build(params.require(:comment).permit(:body))
     @comment.creator = current_user
-    #@comment.user_id = current_user
    
     if @comment.save
       flash[:notice] = "Your comment was added"
