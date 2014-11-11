@@ -1,11 +1,3 @@
-/*@import url('https://fonts.googleapis.com/css?family=Raleway');*/
-
-@font-face {
-  font-family: 'Raleway';
-  src: font-url('https://fonts.googleapis.com/css?family=Raleway');
-  font-weight: normal;
-  font-style: normal;
-}
 
 .main-body {
   font-family: 'Raleway', sans-serif;

@@ -15,5 +15,13 @@ class User < ActiveRecord::Base
   #on: :create  user can edit profile without validating password
   
   sluggable_column :username
+  
+  def admin?
+    self.role == 'admin'
+  end
+  
+  def moderator?
+    self.role == 'moderator?'
+  end
  
 end

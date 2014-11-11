@@ -61,10 +61,11 @@ class PostsController < ApplicationController
   private
   
   def require_same_user
-    if current_user != @post.creator
-      flash[:error] = "You're not allowed to do that."
-      redirect_to root_path
-    end
+    access_denied unless logged_in? and (current_user == @post.creator || current_user.admin?)
+    #if logged_in? and (current_user != @post.creator || current_user.admin?)
+      #flash[:error] = "You're not allowed to do that."
+      #redirect_to root_path
+    #end
   end
     
   def post_params
