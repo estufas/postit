@@ -6,7 +6,7 @@ module Voteable
   end
 
   def total_votes
-    self.up_votes - self.down_votes
+    self.up_votes + self.down_votes
   end
 
   def up_votes
