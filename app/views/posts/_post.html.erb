@@ -18,7 +18,7 @@
   <div class='span8 well'>
     <div class='index-post'>
     <%= render post.categories %>   
-  <h3><%= link_to post.title, post_path(post) %></h3>
+      <h3><%= link_to post.title, post_path(post) %></h3>
   <td><%= post.description %></td>
   <p>
     <span class='quiet'>posted by </span><%= link_to post.creator.username, user_path(post.creator) %>
