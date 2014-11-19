@@ -4,11 +4,9 @@
 <%= render @post.categories %>
 <br/>
 
-<% if logged_in? && current_user == @post.creator || current_user.admin? %>
+<% if logged_in? && current_user == @post.creator || logged_in? && current_user.admin? %>
   [<%= link_to 'edit this post', edit_post_path(@post)%>]
 <% end %>  
-
-<%= render 'shared/content_title', title: @post.title %>
 
 <p> <%= link_to @post.title, fix_url(@post.url) %></p>
 <p>
