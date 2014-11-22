@@ -1,3 +1,10 @@
+body, html {
+  background: #FFE9E6; 
+}
+
+#main {
+  background: #FFE9E6;
+}
 
 .main-body {
   font-family: 'Raleway', sans-serif;
@@ -9,25 +16,60 @@
   font-size: 1.7em;
 }
 
+.row {
+   margin-top: 50px;
+}
+
 .index-post {
-  margin: 2% 2%;
+  margin-left: 150px;
+}
+
+#show-post-message {
+  margin-bottom: 50px;
 }
 
 #show-comment {
   padding: 5%;
 }
 
+#category {
+  margin-bottom: 1%;
+}
+
+.total-votes {
+  font-size: 20px;
+}
+
+.votes {
+  border: solid 3px orange;
+  padding: 7px;
+  border-radius: 50%;
+}
+
 .nav {
-  color: #A895CD;
+  color: #D771D7;
 }
 
 #top {
   background:  #C7FFDA;
 }
 
-#main {
-  background: #EFFFFF;
-  margin-top: 0;
+.navbar-fixed-top { margin-bottom: 0px; }
+.navbar { margin-bottom: 0; }
+
+#stamp {
+  float: left;
+  margin-right: 50px;
 }
 
+#header {
+  margin: 50px;
+}
 
+#nav-button {
+  float: right;
+}
+
+footer {
+  margin-top: 100px;
+}

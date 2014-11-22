@@ -1,9 +1,10 @@
 <ul class='nav'>
-  <li>
-    <%= link_to "go postal!", root_path, :class => 'brand' %>
-    <h3 id='main-title'>travel & leisure news</h3>
-  </li>
-  <li>
+  <div class='span12'>
+    <li>
+      <div class='nav_item'>
+        <%= link_to 'Top Posts', root_path, class: 'btn btn-warning btn-small' %>
+       </div>
+     </li>
     <div class='btn-group nav_item'>
       <%= link_to '#', class: 'btn btn-warning btn-small dropdown-toggle', 'data-toggle' => 'dropdown' do %>
       Categories <span class='caret'></span>
@@ -28,12 +29,12 @@
   </li>
   <li>
  <% if logged_in? %>
-    <div class='nav_item'>
+    <div class='nav_item' id='nav-button'>
       <%= link_to 'New Post', new_post_path, class: 'btn btn-warning btn-small' %>
     </div>
   </li>
   
-    <div class='btn-group nav_item'>
+    <div class='btn-group nav_item' id='nav-button'>
       <%= link_to('', class: 'btn btn-warning btn-small dropdown-toggle', 'data-toggle' => 'dropdown') do %>
         <%= current_user.username %>
         <span class='caret'></span>
@@ -60,18 +61,26 @@
   <% else %>
 
     <li>
-      <div class='nav_item'>
+      <div class='nav_item' id='nav-button'>
         <%= link_to 'Log in', login_path, class: 'btn btn-warning btn-small' %>
        </div>
      </li>
      <li>
-       <div class='btn btn-warning nav_item'>
+       <div class='btn btn-warning btn-small nav_item' id='nav-button'>
         <%= link_to 'Register', register_path %>
        </div>
      </li>
   
   <% end %>
-   
+  <div class="row" id="header"> 
+  <li>
+    <img src = "http://imageshack.com/a/img904/8849/6yc2Kr.jpg" id="stamp">
+    <h2>go postal!</h2>
+    <h3 id='main-title'>travel & leisure news</h3></br>
+    <p>The news site for lovers of fun and adventure.</p>
+  </li>
+  </div>
+    
 </ul>
-
+  </div>
   

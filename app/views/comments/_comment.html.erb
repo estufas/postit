@@ -1,21 +1,22 @@
 <% show_post ||= false %> 
-
-<div class='span0 well text-center'>
+<div class = "row">
+  <div class='span0 text-center'> 
   <%= link_to vote_post_comment_path(comment.post, comment, vote: true), method: 'post', remote: true do %>
     <i class='icon-arrow-up'></i>
   <%end %>
   <span id='comment_<%= comment.id %>up_votes'><%= comment.up_votes %></span>
   <br/>
-  <span id='comment_<%= comment.id %>_votes'><%= comment.total_votes %> votes</span>
+  <span class='total-votes' id='comment_<%= comment.id %>_votes'><%= comment.total_votes %> votes</span>
   <br/>
   <%= link_to vote_post_comment_path(comment.post, comment, vote: false), method: 'post', remote: true do %>
     <i class='icon-arrow-down'></i>
   <%end %>
   <span id='comment_<%= comment.id %>down_votes'><%= comment.down_votes %></span>
+
   </br>
 </div>
 
-<div class="well span8" id="show-comment">
+<div class="span8" id="show-comment">
     <em>"<%= comment.body %>"</em>
     <% if show_post %>
     
@@ -26,3 +27,4 @@
   by <%= link_to comment.creator.username, user_path(comment.creator) %> at <%= display_datetime(comment.created_at) %>
   </br>
   </div>
+</div>
